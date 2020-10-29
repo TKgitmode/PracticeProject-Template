@@ -1,0 +1,16 @@
+<br/>
+<hr/>
+<br/>
+<h1>{{saludo}}</h1>
+<p> {{"Anhos hasta el 2050"|cut:" "}} </p>
+
+{% load filters %}
+{{"Reynaldo"|greeting|safe}}
+
+<ul>
+    {% for year in years %}
+        {% if year|divisibleby:2 == True %}
+            <li>{{year}}</li>
+        {% endif %}
+    {% endfor %}
+</ul>

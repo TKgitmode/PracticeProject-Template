@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+
+{% block title %} Formulary {% endblock %}
+
+
+{% block content %}
+
+<h1 class="tittle">Formularii Django</h1>
+
+<form action="" method="POST">
+    {% csrf_token %}
+
+    {{form}}
+
+    <input type="submit" value="save"/>
+</form>
+
+{% endblock %}

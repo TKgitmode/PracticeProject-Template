@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+
+{% block title %} {{t}} {% endblock %}
+
+
+{% block content %}
+
+<h1 class="tittle">{{msg|default:"nothing here... "}}</h1>
+{% for repuesto in rep %}
+    <ul>
+        <li>
+            <p>
+                {{repuesto.id}}. {{repuesto.nombre}} {{repuesto.stock}} {{repuesto.fecha}}   
+                <br>
+                <a href="{% url 'Brepuesto' id=repuesto.id %}"> Eliminar </a>
+                <br>
+            </p>
+            <br>
+        </li>
+    </ul>
+{% endfor %}
+
+{% endblock %}

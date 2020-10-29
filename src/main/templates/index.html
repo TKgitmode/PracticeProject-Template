@@ -1,0 +1,28 @@
+{% extends 'layout.html' %}
+
+{% block title %}Index{% endblock %}
+
+{% comment 'Comentarios GAAA' %}
+<h1>COmentarios</h1>
+{% endcomment %}
+
+
+{% block content %}
+
+<h1 class="tittle">{{t}}</h1>
+
+{% if nombre %}
+    <p> {{nombre}} </p>
+{% else %}
+    <strong> No name here... </strong>
+{% endif %}
+
+<ul>
+    {% for language in languages %}
+        <li>{{forloop.counter}}.{{language}} </li>
+    {% endfor %}
+</ul>
+
+{% include 'fechas.html' with saludo="Hola manito"%}
+
+{% endblock %}

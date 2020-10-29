@@ -1,0 +1,70 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8"/>
+    
+    <title>    
+        {% block title %}
+    
+        {% endblock %} 
+        | Django Web
+    </title>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}"/>
+</head>
+
+<body>
+    <!--COMENTARIOS-->
+    <header>
+        <div id="logotipo">
+            <img src="{% static 'images/logo.png' %}" >
+            <h1> Web DJango</h1>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li>
+                <a href = "{% url 'index' %}">Inicio</a>
+            </li>
+            <li>
+                <a href = "{% url 'prueba1' %}">metodows</a>
+            </li>
+            <li>
+                <a href = "{% url 'contacto' 'Reynaldo' %}">contacto</a>
+            </li>
+            <li>
+                <a href = "{% url 'Lrepuesto' %}">lista Repuestos</a>
+            </li>
+            <li>
+                <a href = "{% url 'Crepuesto' %}">Crear Repuesto</a>
+            </li>
+            <li>
+                <a href = "{% url 'CFrepuesto' %}">Crear FormularioDjango Repuesto</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="barra">
+        <span class="esq-izq"></span>
+        <span class="rel-barra"></span>
+        <span class="esq-der"></span>
+    </div>
+
+    <div id="content">
+        <div class="box">
+            {% block content %}
+                <h2 class="tittle">Titulo</h2>
+                <strong>Contenido del bloque original</strong>
+            {% endblock %}
+        </div> 
+    </div>
+
+</body>
+<footer>
+    Python with Django - {% now "d/m/Y" %}
+</footer>
+
+</html>

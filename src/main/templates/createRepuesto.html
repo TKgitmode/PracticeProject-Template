@@ -1,0 +1,21 @@
+{% extends 'layout.html' %}
+
+{% block title %} Formulary {% endblock %}
+
+
+{% block content %}
+
+<h1 class="tittle">Formularii Creation</h1>
+
+<form action="{% url 'Srepuesto' %}" method="POST">
+    {% csrf_token %}
+
+    <label for="title"> Nombre del Repuesto</label>
+    <input type="text" name="repuesto" placeholder="Ingrese el nombre del repuesto"/>
+    <label for="stock"> Stock</label>
+    <input type="number" name="stock" placeholder="Ingrese el stock del repuesto" min="0"/>
+
+    <input type="submit" value="save"/>
+</form>
+
+{% endblock %}
